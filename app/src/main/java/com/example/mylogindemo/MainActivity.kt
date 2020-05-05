@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.text.method.TextKeyListener.clear
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
@@ -25,21 +26,21 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        loginBtn.setOnClickListener {
-            View.OnClickListener { View ->
-                login()
-            }
-        }
-        registerBtn.setOnClickListener {
-            View.OnClickListener { View ->
-                register()
-            }
-        }
+        loginBtn.setOnClickListener (View.OnClickListener{
+                view -> login()
+        })
+        registerBtn.setOnClickListener (View.OnClickListener{
+                view ->register()
+
+        })
     }
 
     private fun login() {
-        var email = mEdtEmail.text.toString()
-        var password = mEdtPassword.text.toString()
+        val emailTxt = findViewById<View>(R.id.mEdtEmail) as EditText
+        val passwordTxt = findViewById<View>(R.id.mEdtPassword) as EditText
+
+        var email = emailTxt.text.toString()
+        var password = passwordTxt.text.toString()
 
         if (!email.isEmpty() or !password.isEmpty()) {
 
@@ -50,7 +51,7 @@ class MainActivity : AppCompatActivity() {
                 })
 
         } else {
-            Toast.makeText(this, "Error...Log in not succeesful", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Error...Log in not successful", Toast.LENGTH_LONG).show()
         }
     }
 
