@@ -32,7 +32,7 @@ class TimelimeActivity : AppCompatActivity() {
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 val result:String= snapshot.child("Name").getValue().toString()
-                displaytxt.text="Welcome "+result
+                displaytxt.text="Welcome "+ result
             }
 
         })
