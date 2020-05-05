@@ -55,7 +55,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun register() {
+    private fun register()
+    {
         var progress = ProgressDialog(this)
         progress.setTitle("Loading")
         progress.setMessage("Please wait.......")
@@ -65,7 +66,8 @@ class MainActivity : AppCompatActivity() {
         progress.dismiss()
     }
 
-    private fun clear() {
+    private fun clear()
+    {
         mEdtEmail.setText("")
         mEdtPassword.setText("")
     }
